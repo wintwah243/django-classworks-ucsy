@@ -17,5 +17,9 @@ urlpatterns = [
 	re_path(r"^articles/(?P<year>[0-9]{4})/$", views.year_archive),
  	re_path(r"^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$", views.month_archive),
 	re_path( r"^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/(?P<slug>[\w-]+)/$", views.article_detail, ),
+    path("detail/<int:store_id>/<str:location>/", views.detail, name="detail"),
+    path("detail-dict/", views.detailDict, name="detailDict")
+
+
 
 ]

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store Detail</title>
+</head>
+<body>
+
+<h1>{{ store_name }} Store</h1>
+
+<h2>Address</h2>
+<p>
+    Street: {{ store_address.street }} <br>
+    City: {{ store_address.city }} <br>
+    State: {{ store_address.state }}
+</p>
+
+<h2>Facilities</h2>
+<ul>
+    {% for item in store_facility %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Menu Categories</h2>
+<ul>
+    {% for value, label in store_menu %}
+    <li>{{ value }} - {{ label }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

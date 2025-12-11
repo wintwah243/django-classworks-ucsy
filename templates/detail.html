@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store Detail</title>
+</head>
+<body>
+
+<h1>Store Detail Page</h1>
+
+<p><strong>Store ID:</strong> {{ store_id }}</p>
+
+{% if location %}
+<p><strong>Location:</strong> {{ location }}</p>
+{% endif %}
+
+{% if hours %}
+<p><strong>Opening Hours:</strong> {{ hours }}</p>
+{% endif %}
+
+{% if map %}
+<p><strong>Map:</strong></p>
+<p>{{ map }}</p>
+{% endif %}
+
+</body>
+</html>

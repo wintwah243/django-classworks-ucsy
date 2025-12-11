@@ -30,3 +30,26 @@ def month_archive(request, year, month):
 
 def article_detail(request, year, month, slug):
     return HttpResponse(f"Detail page: {slug} ({month}/{year})")
+
+
+def detail(request, store_id='1', location=None):
+    hours = request.GET.get('hours', '')
+    map = request.GET.get('map', '')
+
+    context = {
+        "store_id": store_id,
+        "location": location,
+        "hours": hours,
+        "map": map,
+    }
+    return render(request, "detail.html", context)
+
+def detailDict(request, store_id='1', location=None):
+    store_name = 'Downtown'
+    store_address = {'street': 'Main #385', 'city': 'San Diego', 'state': 'CA'}
+    store_facility = ['Wifi', 'A/C']
+    store_menu = ((0, ''), (1,'Drinks'), (2, 'Food'), (3, 'Coffee'))
+    values_for_template = {'store_name': store_name, 'store_address': store_address, 'store_facility': store_facility, 'store_menu': store_menu}
+    return render(request, "detailDict.html", values_for_template)
+
+
