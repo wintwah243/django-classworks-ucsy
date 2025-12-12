@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
@@ -51,5 +52,19 @@ def detailDict(request, store_id='1', location=None):
     store_menu = ((0, ''), (1,'Drinks'), (2, 'Food'), (3, 'Coffee'))
     values_for_template = {'store_name': store_name, 'store_address': store_address, 'store_facility': store_facility, 'store_menu': store_menu}
     return render(request, "detailDict.html", values_for_template)
+
+
+def flash_message(request):
+    data = dict()
+    messages.success(request, "Success: This is the sample success flash message.")
+    messages.error(request, "Error: this is the sample error flash message.")
+    messages.info(request, "Info: This is the sample info flash message.")
+    messages.warning(request, "Warning: This is the sample warning flash message.")
+    return render(request, "flashMessage.html", data)
+
+# class MyView(View):
+#     def get(self, request):
+#         return render(request, "home.html")
+#     def post(self, request):
 
 
