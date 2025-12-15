@@ -20,7 +20,5 @@ urlpatterns = [
     path("detail/<int:store_id>/<str:location>/", views.detail, name="detail"),
     path("detail-dict/", views.detailDict, name="detailDict"),
     path('flash/', views.flash_message, name='flash'),
-
-
-
+    path('index-template/', views.userinfo, name='index-template'),
 ]

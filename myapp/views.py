@@ -3,6 +3,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
 
+from django.template import loader
+
+
 # Create your views here.
 
 def home(request):
@@ -66,5 +69,13 @@ def flash_message(request):
 #     def get(self, request):
 #         return render(request, "home.html")
 #     def post(self, request):
+
+def userinfo(request):
+    template = loader.get_template('index_template.html')
+    student = {
+        'name': 'Mg Mg',
+        'address': 'Yangon'
+    }
+    return HttpResponse(template.render(student, request))
 
 
