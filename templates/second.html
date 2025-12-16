@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>child page</title>
+</head>
+<body>
+
+    {% extends 'main.html' %}
+    {% block content %}
+    {{ block.super }}
+    <p>The previous example text is replaced by this text.</p>
+    {% endblock %}
+
+</body>
+</html>

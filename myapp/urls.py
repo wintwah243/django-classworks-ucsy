@@ -21,4 +21,8 @@ urlpatterns = [
     path("detail-dict/", views.detailDict, name="detailDict"),
     path('flash/', views.flash_message, name='flash'),
     path('index-template/', views.userinfo, name='index-template'),
+    path('tag-example/', views.tag_example, name='tag-example'),
+    path('extend-example/', views.test_block, name='extend-example'),
+    path('block-super-example/', views.test_block_super, name='block-super-example'),
+    path('test-include/', views.test_include, name='test-include'),
 ]

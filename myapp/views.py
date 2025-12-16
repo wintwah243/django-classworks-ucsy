@@ -79,3 +79,19 @@ def userinfo(request):
     return HttpResponse(template.render(student, request))
 
 
+def tag_example(request):
+    today = datetime.datetime.now().date()
+    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    return render(request, "Tag.html", {"today": today, "days_of_week": days})
+
+def test_block(request):
+    return render(request, 'childtemplate.html')
+
+def test_block_super(request):
+    return render(request, 'second.html')
+
+def test_include(request):
+    return render(request, 'mytemplate.html')
+
+
+
