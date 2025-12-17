@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
+from django.urls import path
 
 from django.template import loader
 
@@ -92,6 +93,9 @@ def test_block_super(request):
 
 def test_include(request):
     return render(request, 'mytemplate.html')
+
+def static_home(request):
+    return render(request, 'statichome.html')
 
 
 

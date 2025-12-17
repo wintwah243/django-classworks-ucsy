@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Static Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Welcome to django static example</h1>
+    <p>this page uses CSS+JS+Image from the static folder.</p>
+</header>
+    <img src="{% static 'image/test1.png' %}" class="demo-img">
+    <button onclick="showAlert()">
+        Click me
+    </button>
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

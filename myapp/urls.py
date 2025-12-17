@@ -25,4 +25,5 @@ urlpatterns = [
     path('extend-example/', views.test_block, name='extend-example'),
     path('block-super-example/', views.test_block_super, name='block-super-example'),
     path('test-include/', views.test_include, name='test-include'),
+    path('static-page/', views.static_home, name='static_home'),
 ]
