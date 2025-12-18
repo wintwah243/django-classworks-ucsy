@@ -1,0 +1,22 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<h1>Order Coffee</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <p class="message">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    <label>Coffee Type:</label>
+    <input type="text" name="coffee"><br><br>
+
+    <label>Quantity:</label>
+    <input type="number" name="qty"><br><br>
+
+    <button type="submit">Order</button>
+</form>
+{% endblock %}
