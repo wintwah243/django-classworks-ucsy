@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
 from django.urls import path
+from myapp.forms import StudentForm
 
 from django.template import loader
 
@@ -97,5 +98,6 @@ def test_include(request):
 def static_home(request):
     return render(request, 'statichome.html')
 
-
-
+def form(request):
+    student = StudentForm()
+    return render(request, "form.html", {'form': student})
