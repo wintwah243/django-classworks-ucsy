@@ -27,4 +27,5 @@ urlpatterns = [
     path('test-include/', views.test_include, name='test-include'),
     path('static-page/', views.static_home, name='static_home'),
     path('form/', views.form, name='form'),
+    path('login-form/', views.login, name='form-form'),
 ]

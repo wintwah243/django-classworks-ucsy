@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
 from django.urls import path
-from myapp.forms import StudentForm
+from myapp.forms import StudentForm, LoginForm
 
 from django.template import loader
 
@@ -101,3 +101,16 @@ def static_home(request):
 def form(request):
     student = StudentForm()
     return render(request, "form.html", {'form': student})
+
+def login(request):
+    if request.method == "POST":
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            name = login_form.cleaned_data['name']
+            password = login_form.cleaned_data['password']
+            return HttpResponse("Welcome "+ name)
+        else:
+            pass
+    else:
+        login_form = LoginForm()
+        return render(request, "login.html", {'form': login_form})

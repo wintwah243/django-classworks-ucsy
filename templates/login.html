@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+    <h2>Login</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div>
+            <label for="{{ form.name.id_for_label }}">Name</label><br>
+            {{ form.name }}
+            {% if form.name.errors %}
+                <div style="color: red;">
+                    {{ form.name.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <br>
+
+        <div>
+            <label for="{{ form.password.id_for_label }}">Password</label><br>
+            {{ form.password }}
+            {% if form.password.errors %}
+                <div style="color: red;">
+                    {{ form.password.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <br>
+
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>
