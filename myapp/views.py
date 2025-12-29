@@ -1,9 +1,9 @@
 from django.contrib import messages
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 import datetime
 from django.urls import path
-from myapp.forms import StudentForm, LoginForm
+from myapp.forms import StudentForm, LoginForm, ContactForm
 
 from django.template import loader
 
@@ -114,3 +114,18 @@ def login(request):
     else:
         login_form = LoginForm()
         return render(request, "login.html", {'form': login_form})
+
+
+def contact_view(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            return redirect("thankyou")
+    else:
+        form = ContactForm()
+
+    return render(request, "contact.html", {'form': form})
+
+
+def thankyou_view(request):
+    return render(request, "thankyou.html")

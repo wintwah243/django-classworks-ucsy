@@ -26,6 +26,10 @@ urlpatterns = [
     path('block-super-example/', views.test_block_super, name='block-super-example'),
     path('test-include/', views.test_include, name='test-include'),
     path('static-page/', views.static_home, name='static_home'),
+    # form url
     path('form/', views.form, name='form'),
     path('login-form/', views.login, name='form-form'),
+    # contact and thank you form
+    path('contact/', views.contact_view, name='contact'),
+    path('thankyou/', views.thankyou_view, name='thankyou'),
 ]

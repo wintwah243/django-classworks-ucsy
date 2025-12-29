@@ -9,3 +9,8 @@ class StudentForm(forms.Form):
 class LoginForm(forms.Form):
     name = forms.CharField(label='Enter your name', max_length=100)
     password = forms.CharField(label='Enter your password', widget=forms.PasswordInput())
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
