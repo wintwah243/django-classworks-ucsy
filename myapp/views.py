@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 import datetime
 from django.urls import path
-from myapp.forms import StudentForm, LoginForm, ContactForm
+from myapp.forms import StudentForm, LoginForm, ContactForm, ContactForm1, Registration, SelectionForm
 
 from django.template import loader
 
@@ -129,3 +129,25 @@ def contact_view(request):
 
 def thankyou_view(request):
     return render(request, "thankyou.html")
+
+def contact(request):
+    if request.method == "POST":
+        c_form = ContactForm1(request.POST)
+        if c_form.is_valid():
+            return render(
+                request,
+                "contact1.html",
+                {'form': ContactForm1(), 'success': True}
+            )
+    else:
+        c_form = ContactForm1()
+
+    return render(request, "contact1.html", {'form': c_form})
+
+def register(request):
+    form = Registration(request.POST or None)
+    return render(request, "register.html", {'form': form})
+
+def selection(request):
+    form = SelectionForm(request.POST or None)
+    return render(request, "selection.html", {'form': form})

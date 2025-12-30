@@ -31,5 +31,8 @@ urlpatterns = [
     path('login-form/', views.login, name='form-form'),
     # contact and thank you form
     path('contact/', views.contact_view, name='contact'),
-    path('thankyou/', views.thankyou_view, name='thankyou'),
+    path('contact/thankyou/', views.thankyou_view, name='thankyou'),
+    path('contact1/', views.contact, name='contact1'),
+    path('register/', views.register, name='register'),
+    path('selection/', views.selection, name='selection'),
 ]

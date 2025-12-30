@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+</head>
+<body>
+
+    <h1>Contact Us</h1>
+
+    {# Success message #}
+    {% if success %}
+        <p style="color: green;">
+            Your message has been sent successfully.
+        </p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Send</button>
+    </form>
+
+</body>
+</html>
