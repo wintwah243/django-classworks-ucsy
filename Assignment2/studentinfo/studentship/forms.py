@@ -36,7 +36,7 @@ SEMESTER_CHOICES = [
 class StudentForm(forms.Form):
     username = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'placeholder': 'Enter username'}))
     password = forms.CharField(widget=forms.PasswordInput())
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'example@ucsy.edu.mm'}))
+    email = forms.EmailField(widget=forms.EmailInput())
     date_of_birth = forms.DateField(widget=forms.SelectDateWidget(years=range(1995, date.today().year + 1)))
     interests = forms.MultipleChoiceField(choices=INTEREST_CHOICES,widget=forms.CheckboxSelectMultiple)
     academic_year = forms.ChoiceField(choices=SEMESTER_CHOICES,widget=forms.RadioSelect)
