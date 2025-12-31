@@ -28,9 +28,9 @@ INTEREST_CHOICES = [
 ]
 
 SEMESTER_CHOICES = [
-    ('IV', 'Semester IV'),
-    ('V', 'Semester V'),
-    ('VI', 'Semester VI'),
+    ('1', 'Semester IV'),
+    ('2', 'Semester V'),
+    ('3', 'Semester VI'),
 ]
 
 class StudentForm(forms.Form):
