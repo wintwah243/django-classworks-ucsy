@@ -14,13 +14,13 @@ def new(request):
     else:
         book_form = BookForm()
 
-    return render(request, 'add.html', {'form': book_form})
+    return render(request, 'book/add.html', {'form': book_form})
 
 
 
 def books(request):
     data = Book.objects.all()
-    return render(request, 'books.html', {'books': data})
+    return render(request, 'book/books.html', {'books': data})
 
 def update(request, id):
     data = Book.objects.get(id=id)
@@ -35,7 +35,7 @@ def update(request, id):
     else:
             form = BookForm(instance=data)
 
-    return render(request, 'update.html', {'form': form})
+    return render(request, 'book/update.html', {'form': form})
 
 
 
