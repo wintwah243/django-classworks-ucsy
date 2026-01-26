@@ -151,3 +151,15 @@ def register(request):
 def selection(request):
     form = SelectionForm(request.POST or None)
     return render(request, "selection.html", {'form': form})
+
+def count_visit(request):
+    visit = request.session.get('visit', 0) + 1
+    request.session['visit'] = visit
+    return HttpResponse(f"Visit count : {request.session['visit']}")
+
+def delete_session(request):
+    try:
+        del request.session['visit']
+    except KeyError:
+        pass
+    return HttpResponse("Session Data (Visit Count) is deleted.")
