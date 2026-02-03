@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Stationary List</title>
+</head>
+<body>
+<div class="container">
+    <h4>Stationary List</h4>
+    <table class = "table table-bordered">
+        <tr>
+            <th>Stationary Item Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Description</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for stationary in stationaries %}
+        <tr>
+            <td>{{ stationary.name }}</td>
+            <td>{{ stationary.category }}</td>
+            <td>{{ stationary.price }}</td>
+            <td>{{ stationary.stock }}</td>
+            <td>{{ stationary.description }}</td>
+            <td><a href='/update/{{stationary.id}}'>Edit</a></td>
+            <td><a href='/delete/{{stationary.id}}'>Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table> <br/>
+    <button class = "btn btn-primary" onclick="location.href='{% url 'new' %}'">Add New stationary item</button>
+</div>
+
+</body>
+</html>
