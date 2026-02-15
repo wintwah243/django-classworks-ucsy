@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from .models import Product
 from .forms import StationaryForm
 
+#111111
 def new(request):
     if request.method == 'POST':
         stationary_form = StationaryForm(request.POST)
