@@ -3,8 +3,9 @@ from django.http import HttpResponseRedirect
 from .models import Product
 from .forms import StationaryForm
 
-# hta min thwr sar ml
 
+
+# hta min thwr sar ml
 def new(request):
     if request.method == 'POST':
         stationary_form = StationaryForm(request.POST)
