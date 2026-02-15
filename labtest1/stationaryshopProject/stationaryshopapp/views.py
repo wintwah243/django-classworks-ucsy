@@ -16,7 +16,7 @@ def new(request):
     return render(request, 'stationary/add.html', {'form': stationary_form})
 
 
-
+# this is stationary
 def stationary(request):
     data = Product.objects.all()
     return render(request, 'stationary/stationary.html', {'stationaries': data})
