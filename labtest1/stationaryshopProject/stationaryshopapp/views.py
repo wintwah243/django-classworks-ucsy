@@ -3,6 +3,10 @@ from django.http import HttpResponseRedirect
 from .models import Product
 from .forms import StationaryForm
 
+
+
+# this is testing branch
+
 # Create your views here.
 def new(request):
     if request.method == 'POST':
