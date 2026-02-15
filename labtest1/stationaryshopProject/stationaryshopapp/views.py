@@ -5,7 +5,7 @@ from .forms import StationaryForm
 
 
 
-# this is testing branch
+# this is dev branch
 
 # Create your views here.
 def new(request):
