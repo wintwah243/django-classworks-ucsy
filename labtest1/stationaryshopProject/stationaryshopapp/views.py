@@ -4,6 +4,7 @@ from .models import Product
 from .forms import StationaryForm
 
 # wintwah is testing
+#Toe Toe Naing
 def new(request):
     if request.method == 'POST':
         stationary_form = StationaryForm(request.POST)
