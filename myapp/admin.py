@@ -1,7 +1,8 @@
 from django.contrib import admin
 from .models import Student, Store, StudentInfo, StudentDetail, Product
 
-# Register your models here.
+# Regis
+
 admin.site.register(Student)
 admin.site.register(Store)
 admin.site.register(StudentInfo)
