@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Student, Store, StudentInfo, StudentDetail, Product
 
-# Regis
+# .....
 
 admin.site.register(Student)
 admin.site.register(Store)
