@@ -2,10 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Product
 from .forms import StationaryForm
-# htamin thwr sar ml
 
-#111111
-#22222
 def new(request):
     if request.method == 'POST':
         stationary_form = StationaryForm(request.POST)
