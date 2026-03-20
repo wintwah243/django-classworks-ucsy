@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item list</title>
+</head>
+<body>
+    <div>
+        <h4>Item List</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            {% for practice4 in practice4data %}
+            <tr>
+                <td>{{practice4.name}}</td>
+                <td>{{practice4.email}}</td>
+                <td><a href="/update/{{practice4.id}}">Edit</a></td>
+                <td><a href="/delete/{{practice4.id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table><br>
+        <button onclick="location.href='{% url 'new' %}'">ADD new item</button>
+    </div>
+</body>
+</html>
